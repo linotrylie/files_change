@@ -14,7 +14,7 @@
      */
     class Home extends CI_Controller
     {
-        private $path = 'F:\\';//目录
+        private $path = 'D:\\';//目录
         public $fi = array();
         public function __construct() {
             parent::__construct();
@@ -56,7 +56,8 @@
             $code = trim($_GET['code']);
             $location = $_GET['location'];
             $array = $this->pregfile($filename,$newpath,$code,$location);
-            $arr = $this->fi;
+            $arr['file'] = $this->fi;
+            $arr['count'] = count($this->fi);
             _ars($arr,true);
         }
 
