@@ -14,7 +14,7 @@
      */
     class Home extends CI_Controller
     {
-        private $path = 'D:\\';//目录
+        private $path = '/mnt/hgfs/wwwroot/';//目录
         public $fi = array();
         public function __construct() {
             parent::__construct();
@@ -25,6 +25,7 @@
         public function index(){
             set_time_limit(0);
             ini_set('memory_limit', '2048');
+            $arr = [];
             $data['copy'] = "创作于2019年5月8日";
             if(!isset($this->session->rsf)){
                 $rsf = md5(time());
